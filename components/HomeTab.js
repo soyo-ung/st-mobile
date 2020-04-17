@@ -49,7 +49,7 @@ export default class HomeTab extends Component {
   render() {
     return (
       <SafeAreaView>
-        <ScrollView style={{ backgroundColor: "#FAFAFA" }}>
+        <ScrollView style={{ backgroundColor: "#fff" }}>
           {this.state.feeds.map((feed) => (
             <Feed data={feed} key={feed.post_id} />
           ))}
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     margin: 1,
     // height: 250,
     backgroundColor: "#fff",
-    borderColor: "#E6E6E6",
+    borderColor: "grey",
     borderWidth: 0.5,
   },
   FeedContent: {

@@ -51,7 +51,7 @@ export default class TrendingTab extends Component {
       <SafeAreaView
         style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
       >
-        <ScrollView style={{ backgroundColor: "#FAFAFA" }}>
+        <ScrollView style={{ backgroundColor: "#fff" }}>
           {this.state.feeds.map((feed) => (
             <Feed data={feed} key={feed.post_id} />
           ))}

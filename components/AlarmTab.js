@@ -69,7 +69,15 @@ export default class AlarmTab extends Component {
       <SafeAreaView style={styles.container}>
         <FlatList
           data={notifications}
-          renderItem={({ item }) => <Item title={item.msg} url={item.url} />}
+          renderItem={({ item }) => (
+            <Item title={item.msg} url={item.url} />
+            // <Button
+            //   title={item.msg}
+            //   color={white}
+            //   style={{ text,padding: 10 }}
+            //   onPress={() => Linking.openURL("https://steemit.com/" + item.url)}
+            // />
+          )}
           KeyExtractor={(item) => item.id}
         />
       </SafeAreaView>
@@ -81,7 +89,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Constants.statusBarHeight,
-    backgroundColor: "#FAFAFA",
   },
   item: {
     backgroundColor: "#fff",

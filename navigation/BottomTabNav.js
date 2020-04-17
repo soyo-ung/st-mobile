@@ -14,14 +14,13 @@ import { EvilIcons, AntDesign } from "@expo/vector-icons";
 const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function Home({ navigation }) {
+function HomeNav({ navigation }) {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
-        name="HomeTab"
+        name="Home"
         component={HomeTab}
         options={{
-          headerTitle: "Home",
           headerLeft: () => (
             <AntDesign
               name="login"
@@ -53,7 +52,7 @@ function BottomTabNav({ navigation }) {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === "Home") {
+            if (route.name === "HomeNav") {
               iconName = focused ? "navicon" : "navicon";
             } else if (route.name === "Trending") {
               iconName = focused ? "star" : "star";
@@ -62,13 +61,13 @@ function BottomTabNav({ navigation }) {
             } else if (route.name === "My") {
               iconName = focused ? "user" : "user";
             }
-            return <EvilIcons name={iconName} size={25} color={color} />;
+            return <EvilIcons name={iconName} size={25} />;
           },
         })}
-        tabBarOptions={{ activeTintColor: "#00BFFF" }}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="HomeNav" component={HomeNav} />
         <Tab.Screen name="Trending" component={TrendingTab} />
+
         <Tab.Screen name="Alarm" component={AlarmTab} />
         <Tab.Screen name="My" component={MyTab} />
       </Tab.Navigator>
